@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Mushroom Classification(e/p)</title>
+  </head>
+  <body>
+    <header>
+        <div class="header_content">
+            <h1> Mushroom Classification </h1>
+            <h3> The goal of the project is to predict mushrooms are edible or poisonius.</h3>
+
+            <h2>Enter Values</h2>
+           <form action="{{ url_for('predict')}}"method="post">
+               <div>
+
+            <label for="cap-shape">Choose your cap-shape from the list:</label>
+            <input list="cap-shapes" name="cap-shape" id="cap-shape">
+
+            <datalist id="cap-shapes">
+            <option value=x>
+            <option value=b>
+            <option value=s>
+            <option value=f>
+            <option value=k>
+            <option value=c>
+            </datalist>
+            </div>
+            
+            <div>
+            
+            <label for="cap-surface">Choose your cap-surface from the list:</label>
+            <input list="cap-surfaces" name="cap-surface" id="cap-surface">
+
+            <datalist id="cap-surfaces">
+            <option value=s>
+            <option value=y>
+            <option value=f>
+            <option value=g>
+
+            </datalist>
+            
+           </div>
+           <div>
+
+   
+    <label for="cap-color">Choose your cap-color from the list:</label>
+        <input list="cap-colors" name="cap-color" id="cap-color">
+            <datalist id="cap-colors">
+            <option value=n>
+            <option value=y>
+            <option value=w>
+            <option value=g>
+            <option value=e>
+            <option value=p>
+            <option value=b>
+            <option value=u>
+            <option value=c>
+            <option value=r>
+            </datalist>
+            </div>
+            
+            <div>
+       
+
+    
+        <label for="bruises">Choose your bruises from the list:</label>
+            <input list="bruisess" name="bruises" id="bruises">
+            <datalist id="bruisess">
+            <option value=t>
+            <option value=f>
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+        
+            <label for="odor">Choose your odor from the list:</label>
+            <input list="odors" name="odor" id="odor">
+
+            <datalist id="odors">
+            <option value=p>
+            <option value=a>
+            <option value=l>
+            <option value=n>
+            <option value=f>
+            <option value=c>
+            <option value=y>
+            <option value=s>
+            <option value=m>
+
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+
+        
+            <label for="gill-spacing">Choose your gill-spacing from the list:</label>
+            <input list="gill-spacings" name="gill-spacing" id="gill-spacing">
+            <datalist id="gill-spacings">
+            <option value=c>
+            <option value=w>
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+   
+            <label for="gill-size">Choose your gill-size from the list:</label>
+            <input list="gill-sizes" name="gill-size" id="gill-size">
+            <datalist id="gill-sizes">
+            <option value=n>
+            <option value=b>
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+   
+        <label for="gill-color">Choose your gill-color from the list:</label>
+            <input list="gill-colors" name="gill-color" id="gill-color">
+            <datalist id="gill-colors">
+            <option value=k>
+            <option value=n>
+            <option value=g>
+            <option value=p>
+            <option value=w>
+            <option value=h>
+            <option value=u>
+            <option value=e>
+            <option value=b>
+            <option value=r>
+            <option value=y>
+            <option value=o>
+
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+        
+            <label for="stalk-shape">Choose your stalk-shape from the list:</label>
+            <input list="stalk-shapes" name="stalk-shape" id="stalk-shape">
+            <datalist id="stalk-shapes">
+            <option value=e>
+            <option value=t>
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+       
+                <label for="stalk-root">Choose your stalk-root from the list:</label>
+            <input list="stalk-roots" name="stalk-root" id="stalk-root">
+
+            <datalist id="stalk-roots">
+            <option value=e>
+            <option value=c>
+            <option value=b>
+            <option value=r>
+                <option value=?>
+
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+       
+            <label for="stalk-surface-above-ring">Choose your stalk-surface-above-ring from the list:</label>
+            <input list="stalk-surface-above-rings" name="stalk-surface-above-ring" id="stalk-surface-above-ring">
+
+            <datalist id="stalk-surface-above-rings">
+            <option value=s>
+            <option value=f>
+            <option value=k>
+            <option value=y>
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+        
+            <label for="stalk-surface-below-ring">Choose your stalk-surface-below-ring from the list:</label>
+            <input list="stalk-surface-below-rings" name="stalk-surface-below-ring" id="stalk-surface-below-ring">
+
+            <datalist id="stalk-surface-below-rings">
+            <option value=s>
+            <option value=f>
+            <option value=k>
+            <option value=y>
+            </datalist>
+            </div>
+            
+            <div>
+           
+
+       
+            <label for="stalk-color-above-ring">Choose your stalk-color-above-ring from the list:</label>
+            <input list="stalk-color-above-rings" name="stalk-color-above-ring" id="stalk-color-above-ring">
+
+            <datalist id="stalk-color-above-rings">'w' 'g' 'p' 'n' 'b' 'e' 'o' 'c' 'y'
+            <option value=w>
+            <option value=g>
+            <option value=p>
+            <option value=n>
+            <option value=b>
+            <option value=e>
+            <option value=o>
+            <option value=c>
+            <option value=y>
+
+            </datalist>
+            </div>
+            
+            <div>
+                
+
+        
+            <label for="stalk-color-below-ring">Choose your stalk-color-below-ring from the list:</label>
+            <input list="stalk-color-below-rings" name="stalk-color-below-ring" id="stalk-color-below-ring">
+
+            <datalist id="stalk-color-below-rings">'w' 'g' 'p' 'n' 'b' 'e' 'o' 'c' 'y'
+            <option value=w>
+            <option value=g>
+            <option value=p>
+            <option value=n>
+            <option value=b>
+            <option value=e>
+            <option value=o>
+            <option value=c>
+            <option value=y>
+
+            </datalist>
+            </div>
+            
+            <div>
+           
+
+      
+            <label for="ring-number">Choose your ring-number from the list:</label>
+            <input list="ring-numbers" name="ring-number" id="ring-number">
+
+            <datalist id="ring-numbers">
+            <option value=o>
+            <option value=t>
+            <option value=n>
+            </datalist>
+            </div>
+            
+            <div>
+           
+
+
+          
+        
+            <label for="ring-type">Choose your ring-type from the list:</label>
+            <input list="ring-types" name="ring-type" id="ring-type">
+
+            <datalist id="ring-types">
+            <option value=p>
+            <option value=e>
+            <option value=l>
+            <option value=f>
+            <option value=n>
+
+
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+       
+   
+            <label for="spore-print-color">Choose your spore-print-color from the list:</label>
+            <input list="spore-print-colors" name="spore-print-color" id="spore-print-color">
+            <datalist id="spore-print-colors">
+            <option value=k>
+            <option value=n>
+            <option value=u>
+            <option value=h>
+            <option value=w>
+            <option value=r>
+            <option value=o>
+            <option value=b>
+            <option value=y>
+
+            </datalist>
+            </div>
+            
+            <div>
+            
+
+        
+            <label for="population">Choose your population from the list:</label>
+            <input list="populations" name="population" id="population">
+
+            <datalist id="populations">
+            <option value=s>
+            <option value=n>
+            <option value=a>
+            <option value=v>
+            <option value=y>
+            <option value=c>
+
+            </datalist>
+            </div>
+            
+            <div>
+           
+
+           
+      
+            <label for="habitat">Choose your habitat from the list:</label>
+            <input list="habitats" name="habitat" id="habitat">
+
+            <datalist id="habitats">
+            <option value=u>
+            <option value=g>
+            <option value=m>
+            <option value=d>
+            <option value=p>
+            <option value=w>
+            <option value=l>
+
+
+            </datalist>
+            </div>
+            
+           
+       
+     <div class="b">
+             <button type="submit" class="btn btn-primary btn-block btn-large"><h4>Predict</h4></button>
+      </div>
+    </form>
+  
+   
+    <div>
+    <br>
+    <br>
+    <h2>
+     {{ prediction_text }}
+    </h2>
+    </div>
+
+
+
+
+        </div>
+
+    </header>
+
+</body>
+</html>
